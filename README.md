@@ -10,10 +10,12 @@ tuesdata <- tidytuesdayR::tt_load('2023-10-17')
 ## OR
 tuesdata <- tidytuesdayR::tt_load(2023, week = 42)
 
-taylor_album_songs <- tuesdata$taylor_album_songs
-taylor_all_songs <- tuesdata$taylor_all_songs
-taylor_albums <- tuesdata$taylor_albums
+library(tidyverse)
+library(taylor)
 
+write_csv(taylor_album_songs, "taylor_album_songs.csv")
+write_csv(taylor_all_songs, "taylor_all_songs.csv")
+write_csv(taylor_albums, "taylor_albums.csv")
 # Option 2: Read directly from GitHub
 
 taylor_album_songs <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-10-17/taylor_album_songs.csv')
